@@ -258,8 +258,8 @@ public class Main {
 		return shortestDelay;
 	}
 	public static void main(String[] args) {
-		problem3part1();
-		problem3part2();
+		System.out.println(problem3part1());
+		System.out.println(problem3part2());
 
 	}
 
