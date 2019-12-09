@@ -78,7 +78,7 @@ public class Main {
 				System.out.println("");
 			}
 			if(result.getPixelAt(i) == 1) {
-				System.out.print(0);
+				System.out.print("O");
 			}
 			else {
 				System.out.print(" ");
