@@ -15,6 +15,12 @@ public class CoordinateChange {
 	public int getYChange() {
 		return yChange;
 	}
+	public float getSlope() {
+		if(xChange == 0) {
+			return (float) 0.00001;
+		}
+		return ((float)-yChange / (float)xChange);
+	}
 	public boolean equals(CoordinateChange other) {
 		/*
 		int xMod = 1;
