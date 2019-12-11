@@ -1,4 +1,4 @@
-package problem9;
+package problem11;
 
 public class IntcodeComputer {
 	public long[] state;
@@ -60,7 +60,7 @@ public class IntcodeComputer {
 		}
 		for(int i=currPos; i<state.length && !shouldHalt; i=currPos) {
 			int opCode = getOpCode((int)state[i]);
-			System.out.println(opCode);
+			//System.out.println(opCode);
 			//System.out.println("Opcode " + opCode);
 				switch(opCode) {
 				case 1:
@@ -71,7 +71,7 @@ public class IntcodeComputer {
 					currPos = i+4;
 					break;
 				case 2:
-					while(state[i+3] > state.length-1) {
+					while((int)getTarget(state[i],i,state[i+3],3)> state.length-1) {
 						doubleSize();
 					}
 					state[(int)getTarget(state[i], i, state[i+3], 3)] = getVal(state[i], 1, i) * getVal(state[i], 2,i);
@@ -88,7 +88,7 @@ public class IntcodeComputer {
 					currPos = i+2;
 					break;
 				case 4:
-					System.out.println("Outputting " + getVal(state[i], 1,i));
+					//System.out.println("Outputting " + getVal(state[i], 1,i));
 					output = getVal(state[i], 1,i);
 					currPos = i+ 2;
 					r.setEndCode(4);
